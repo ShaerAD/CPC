@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加入我们</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6ecbf5 0%, #059ee3 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #12b7f5, #0770e3);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 650px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .qq-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #12b7f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #12b7f5;
+            margin-bottom: 5px;
+        }
+        
+        .card-description {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .qq-group {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed #ddd;
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        
+        .btn-primary {
+            background: #12b7f5;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0c9fd4;
+        }
+        
+        .btn-secondary {
+            background: #ff9f43;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background: #ff8c1a;
+        }
+        
+        .btn-copy {
+            background: #6c5ce7;
+            color: white;
+        }
+        
+        .btn-copy:hover {
+            background: #5649c0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #eee;
+        }
+        
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #2ecc71;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateX(150%);
+            transition: transform 0.4s;
+            z-index: 1000;
+        }
+        
+        .success-message.show {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>加入我们</h1>
+            <p>C.P.C社区</p>
+        </header>
+        
+        <div class="content">
+            <!-- QQ群卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="qq-icon">
+                        <i class="fab fa-qq"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">QQ群</h2>
+                        <p>加入与我们共同发展</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    加入我们的QQ群
+                </p>
+                
+                <!-- QQ群号 -->
+                <div class="qq-group" id="groupNumber">1057916990</div>
+                
+                <button class="btn btn-copy" id="copyBtn">
+                    <i class="fas fa-copy"></i> 复制群号
+                </button>
+                
+                <!-- QQ群加群链接 -->
+                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=XMVzBqWYbOFYN8MuLCT7mb7lkpQPgkMyuFJsP%2B5M%2BFWtIXpgLg9hU44krstDI%2FqJ&busi_data=eyJncm91cENvZGUiOiIxMDU3OTE2OTkwIiwidG9rZW4iOiJSeWhDUmZQZFE4V0dlMmZBb0JZYytoNExldGVkUmFMamRvYnlHTzduT3FxbkQvUlVaYU54MnE2WlVNUmd6clhYIiwidWluIjoiMjA4NDQ1OTYwOCJ9&data=MHKExMbrX-9GBgGZkr_gSuUBvAt2HqYnspieg0DyWa3nUlLiTgrLHvi0SmPsvCv89eLg54S-Ljy7LMcFscLGMw&svctype=4&tempid=h5_group_info" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-qq"></i> 立即加入QQ群
+                </a>
+            </div>
+            
+            <!-- QQ频道卡片 -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="qq-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <div>
+                        <h2 class="card-title">QQ频道</h2>
+                        <p>C.P.C 社区</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    订阅我们
+                </p>
+                
+                <!-- QQ频道加入链接 -->
+                <a href="https://pd.qq.com/s/gssl6s42f?b=9" class="btn btn-secondary" target="_blank">
+                    <i class="fas fa-broadcast-tower"></i> 加入QQ频道
+                </a>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 C.P.C SHAER</p>
+        </footer>
+    </div>
+    
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> 群号已复制到剪贴板
+    </div>
+
+    <script>
+        // 获取DOM元素
+        const copyBtn = document.getElementById('copyBtn');
+        const groupNumber = document.getElementById('groupNumber');
+        const successMessage = document.getElementById('successMessage');
+        
+        // 复制群号功能
+        copyBtn.addEventListener('click', function() {
+            // 创建临时输入框
+            const tempInput = document.createElement('input');
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = groupNumber.textContent;
+            document.body.appendChild(tempInput);
+            
+            // 选中并复制文本
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            // 显示成功消息
+            successMessage.classList.add('show');
+            
+            // 3秒后隐藏消息
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
