@@ -14,8 +14,10 @@
         }
         
         body {
-            background: url('https://shaerad.github.io/P/1000011958.png') no-repeat center center fixed;
-            background-size: cover;
+            background: url('https://shaerad.github.io/P/1000011958.png') no-repeat center center;
+            background-size: contain;
+            background-color: #6ecbf5;
+            background-attachment: fixed;
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
@@ -23,20 +25,33 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+        }
+        
+        /* 添加背景覆盖层确保文字可读性 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(110, 203, 245, 0.3);
+            z-index: -1;
         }
         
         .container {
             max-width: 800px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
         
         header {
-            background: linear-gradient(to right, rgba(18, 183, 245, 0.7), rgba(7, 112, 227, 0.7));
+            background: linear-gradient(to right, rgba(18, 183, 245, 0.6), rgba(7, 112, 227, 0.6));
             color: white;
             padding: 30px;
             text-align: center;
@@ -66,10 +81,22 @@
             h1 {
                 font-size: 1.8rem;
             }
+            
+            body {
+                background-size: cover;
+                padding: 10px;
+            }
+        }
+        
+        /* 针对大屏幕的优化 */
+        @media (min-width: 1200px) {
+            body {
+                background-size: 60% auto;
+            }
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.75);
+            background: rgba(255, 255, 255, 0.7);
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -121,10 +148,10 @@
             color: #ff6b6b;
             margin: 15px 0;
             padding: 10px;
-            background: rgba(249, 249, 249, 0.6);
+            background: rgba(249, 249, 249, 0.5);
             border-radius: 8px;
             text-align: center;
-            border: 1px dashed rgba(221, 221, 221, 0.6);
+            border: 1px dashed rgba(221, 221, 221, 0.5);
         }
         
         .btn {
@@ -143,30 +170,30 @@
         }
         
         .btn-primary {
-            background: rgba(18, 183, 245, 0.85);
+            background: rgba(18, 183, 245, 0.8);
             color: white;
         }
         
         .btn-primary:hover {
-            background: rgba(12, 159, 212, 0.85);
+            background: rgba(12, 159, 212, 0.8);
         }
         
         .btn-secondary {
-            background: rgba(255, 159, 67, 0.85);
+            background: rgba(255, 159, 67, 0.8);
             color: white;
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 140, 26, 0.85);
+            background: rgba(255, 140, 26, 0.8);
         }
         
         .btn-copy {
-            background: rgba(108, 92, 231, 0.85);
+            background: rgba(108, 92, 231, 0.8);
             color: white;
         }
         
         .btn-copy:hover {
-            background: rgba(86, 73, 192, 0.85);
+            background: rgba(86, 73, 192, 0.8);
         }
         
         footer {
@@ -174,7 +201,7 @@
             padding: 20px;
             color: #666;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(238, 238, 238, 0.6);
+            border-top: 1px solid rgba(238, 238, 238, 0.5);
         }
         
         .success-message {
@@ -279,8 +306,28 @@
             
             setTimeout(function() {
                 successMessage.classList.remove('show');
-            }, 3000);
+            }, 1000);
         });
+        
+        function adjustBackground() {
+            const body = document.body;
+            const img = new Image();
+            img.src = 'https://shaerad.github.io/P/1000011958.png';
+            
+            img.onload = function() {
+                const imgRatio = img.width / img.height;
+                const screenRatio = window.innerWidth / window.innerHeight;
+                
+                if (imgRatio > screenRatio) {
+                    body.style.backgroundSize = 'auto 50%';
+                } else {
+                    body.style.backgroundSize = '50% auto';
+                }
+            };
+        }
+
+        window.addEventListener('load', adjustBackground);
+        window.addEventListener('resize', adjustBackground);
     </script>
 </body>
 </html>
