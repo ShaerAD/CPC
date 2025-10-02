@@ -14,8 +14,10 @@
         }
         
         body {
+            /* 在这里手动修改背景图片大小 */
+           
             background: url('https://shaerad.github.io/P/1000011958.png') no-repeat center center;
-            background-size: contain;
+            background-size: 110% 60%; /* 修改这个值来调整图片大小 */
             background-color: #6ecbf5;
             background-attachment: fixed;
             color: #333;
@@ -28,31 +30,19 @@
             position: relative;
         }
         
-        /* 添加背景覆盖层确保文字可读性 */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(110, 203, 245, 0.3);
-            z-index: -1;
-        }
-        
         .container {
             max-width: 800px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             overflow: hidden;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
         }
         
         header {
-            background: linear-gradient(to right, rgba(18, 183, 245, 0.6), rgba(7, 112, 227, 0.6));
-            color: white;
+            background: linear-gradient(to right, rgba(18, 183, 245, 0.05), rgba(7, 112, 227, 0.05));
+            color: #1e3a8a;
             padding: 30px;
             text-align: center;
         }
@@ -60,6 +50,13 @@
         h1 {
             font-size: 2.2rem;
             margin-bottom: 10px;
+            color: #1e3a8a;
+            opacity: 1;
+        }
+        
+        header p {
+            opacity: 1;
+            color: #1e3a8a;
         }
         
         .content {
@@ -83,20 +80,12 @@
             }
             
             body {
-                background-size: cover;
                 padding: 10px;
             }
         }
         
-        /* 针对大屏幕的优化 */
-        @media (min-width: 1200px) {
-            body {
-                background-size: 60% auto;
-            }
-        }
-        
         .card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
@@ -120,38 +109,47 @@
             width: 70px;
             height: 70px;
             border-radius: 50%;
-            background: rgba(18, 183, 245, 0.8);
+            background: #1e3a8a;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
             font-size: 2rem;
             color: white;
+            opacity: 1;
         }
         
         .card-title {
             font-size: 1.5rem;
-            color: #12b7f5;
+            color: #1e3a8a;
             margin-bottom: 5px;
+            opacity: 1;
+        }
+        
+        .card-header p {
+            color: #1e3a8a;
+            opacity: 1;
         }
         
         .card-description {
-            color: #666;
+            color: #1e3a8a;
             font-size: 0.95rem;
             margin-bottom: 20px;
             flex-grow: 1;
+            opacity: 1;
         }
         
         .qq-group {
             font-size: 1.3rem;
             font-weight: bold;
-            color: #ff6b6b;
+            color: #1e3a8a;
             margin: 15px 0;
             padding: 10px;
-            background: rgba(249, 249, 249, 0.5);
+            background: rgba(249, 249, 249, 0.05);
             border-radius: 8px;
             text-align: center;
-            border: 1px dashed rgba(221, 221, 221, 0.5);
+            border: 1px dashed rgba(30, 58, 138, 0.5);
+            opacity: 1;
         }
         
         .btn {
@@ -170,38 +168,47 @@
         }
         
         .btn-primary {
-            background: rgba(18, 183, 245, 0.8);
-            color: white;
+            background: rgba(18, 183, 245, 0.05);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-primary:hover {
-            background: rgba(12, 159, 212, 0.8);
+            background: rgba(30, 58, 138, 0.1);
         }
         
         .btn-secondary {
-            background: rgba(255, 159, 67, 0.8);
-            color: white;
+            background: rgba(255, 159, 67, 0.05);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 140, 26, 0.8);
+            background: rgba(30, 58, 138, 0.1);
         }
         
         .btn-copy {
-            background: rgba(108, 92, 231, 0.8);
-            color: white;
+            background: rgba(108, 92, 231, 0.05);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-copy:hover {
-            background: rgba(86, 73, 192, 0.8);
+            background: rgba(30, 58, 138, 0.1);
+        }
+        
+        .btn i {
+            opacity: 1;
+            color: #1e3a8a;
         }
         
         footer {
             text-align: center;
             padding: 20px;
-            color: #666;
+            color: #1e3a8a;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(238, 238, 238, 0.5);
+            border-top: 1px solid rgba(30, 58, 138, 0.3);
+            opacity: 1;
         }
         
         .success-message {
@@ -216,10 +223,15 @@
             transform: translateX(150%);
             transition: transform 0.4s;
             z-index: 1000;
+            opacity: 1;
         }
         
         .success-message.show {
             transform: translateX(0);
+        }
+        
+        .success-message i {
+            opacity: 1;
         }
     </style>
 </head>
@@ -308,26 +320,6 @@
                 successMessage.classList.remove('show');
             }, 1000);
         });
-        
-        function adjustBackground() {
-            const body = document.body;
-            const img = new Image();
-            img.src = 'https://shaerad.github.io/P/1000011958.png';
-            
-            img.onload = function() {
-                const imgRatio = img.width / img.height;
-                const screenRatio = window.innerWidth / window.innerHeight;
-                
-                if (imgRatio > screenRatio) {
-                    body.style.backgroundSize = 'auto 50%';
-                } else {
-                    body.style.backgroundSize = '50% auto';
-                }
-            };
-        }
-
-        window.addEventListener('load', adjustBackground);
-        window.addEventListener('resize', adjustBackground);
     </script>
 </body>
 </html>
