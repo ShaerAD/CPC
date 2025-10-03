@@ -119,6 +119,24 @@
             opacity: 1;
         }
         
+        .download-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            background: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .download-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .card-title {
             font-size: 1.5rem;
             color: #1e3a8a;
@@ -137,6 +155,18 @@
             margin-bottom: 20px;
             flex-grow: 1;
             opacity: 1;
+        }
+        
+        .download-notice {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 8px;
+            background: rgba(255, 107, 107, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            border: 1px dashed #ff6b6b;
         }
         
         .qq-group {
@@ -195,6 +225,16 @@
         
         .btn-copy:hover {
             background: rgba(30, 58, 138, 0.1);
+        }
+        
+        .btn-download {
+            background: rgba(46, 204, 113, 0.1);
+            color: #1e3a8a;
+            border: 1px solid rgba(46, 204, 113, 0.5);
+        }
+        
+        .btn-download:hover {
+            background: rgba(46, 204, 113, 0.2);
         }
         
         .btn i {
@@ -286,6 +326,30 @@
                 
                 <a href="https://pd.qq.com/s/gssl6s42f?b=9" class="btn btn-secondary" target="_blank">
                     <i class="fas fa-broadcast-tower"></i> 加入QQ频道
+                </a>
+            </div>
+            
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="download-icon">
+                        <img src="https://shaerad.github.io/P/icon.png" alt="APK">
+                    </div>
+                    <div>
+                        <h2 class="card-title">下载支持的游戏</h2>
+                        <p>Car Parking Multiplayer</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    下载Car Parking Multiplayer 4.9.4 XAPK
+                </p>
+                
+                <div class="download-notice">
+                    无法下载请挂VPN
+                </div>
+                
+                <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
+                    <i class="fas fa-download"></i> 下载Car Parking
                 </a>
             </div>
         </div>
