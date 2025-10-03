@@ -14,10 +14,10 @@
         }
         
         body {
-            /* 在这里手动修改背景图片大小 */
+            /* 原始人社区 */
            
             background: url('https://shaerad.github.io/P/1000011958.png') no-repeat center center;
-            background-size: 110% 60%; /* 修改这个值来调整图片大小 */
+            background-size: 110% 60%;
             background-color: #6ecbf5;
             background-attachment: fixed;
             color: #333;
@@ -117,6 +117,13 @@
             font-size: 2rem;
             color: white;
             opacity: 1;
+            overflow: hidden;
+        }
+        
+        .qq-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .download-icon {
@@ -299,11 +306,11 @@
             <div class="card">
                 <div class="card-header">
                     <div class="qq-icon">
-                        <i class="fab fa-qq"></i>
+                        <img src="https://shaerad.github.io/P/icon.png" alt="C.P.C图标">
                     </div>
                     <div>
-                        <h2 class="card-title">QQ群</h2>
-                        <p>C.P.C 社群</p>
+                        <h2 class="card-title">C.P.C社群</h2>
+                        <p>SHAER</p>
                     </div>
                 </div>
                 
@@ -318,31 +325,36 @@
                 </button>
                 
                 <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=XMVzBqWYbOFYN8MuLCT7mb7lkpQPgkMyuFJsP%2B5M%2BFWtIXpgLg9hU44krstDI%2FqJ&busi_data=eyJncm91cENvZGUiOiIxMDU3OTE2OTkwIiwidG9rZW4iOiJSeWhDUmZQZFE4V0dlMmZBb0JZYytoNExldGVkUmFMamRvYnlHTzduT3FxbkQvUlVaYU54MnE2WlVNUmd6clhYIiwidWluIjoiMjA4NDQ1OTYwOCJ9&data=MHKExMbrX-9GBgGZkr_gSuUBvAt2HqYnspieg0DyWa3nUlLiTgrLHvi0SmPsvCv89eLg54S-Ljy7LMcFscLGMw&svctype=4&tempid=h5_group_info" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-qq"></i> 立即加入QQ群
+                    <i class="fab fa-qq"></i> 加入QQ群
                 </a>
             </div>
             
             <div class="card">
                 <div class="card-header">
                     <div class="qq-icon">
-                        <i class="fas fa-broadcast-tower"></i>
+                        <img src="https://shaerad.github.io/P/Image_1759475870520.jpg" alt="TK2图标">
                     </div>
                     <div>
-                        <h2 class="card-title">QQ频道</h2>
-                        <p>C.P.C 社区频道</p>
+                        <h2 class="card-title">TK2警涂制作经验分享群</h2>
+                        <p>我不吃香菜</p>
                     </div>
                 </div>
                 
                 <p class="card-description">
-                    加入免费获取大众帕萨特
+                    加入TK2警涂制作经验分享群
                 </p>
                 
-                <a href="https://pd.qq.com/s/gssl6s42f?b=9" class="btn btn-secondary" target="_blank">
-                    <i class="fas fa-broadcast-tower"></i> 加入QQ频道
+                <div class="qq-group" id="tk2GroupNumber">684300707</div>
+                
+                <button class="btn btn-copy" id="copyTk2Btn">
+                    <i class="fas fa-copy"></i> 复制群号
+                </button>
+                
+                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=0dH79%2BTBIZRGIc%2BgyxBMxnck0DgGNcYVSz0LZUs87%2BivKTf5CZtIvQrSXFK2jD5C&busi_data=eyJncm91cENvZGUiOiI2ODQzMDA3MDciLCJ0b2tlbiI6Iis2VXEwUlBpcTZWMDQwQnBQd0V4SWVUL1laZ3V1RWpwY1ovNFIrMUhOVUliWGRsZXVQbGhiY0dSd0ozZFo2YXAiLCJ1aW4iOiIyMDg0NDU5NjA4In0%3D&data=l4imjnyOsjd8cFyLlpdtFEL0bo_Gw7IgXCufVeZVGNd17f4baO98i8QV93UPDtTvAEM3vzSdTSjEMIy-Ki4uZQ&svctype=4&tempid=h5_group_info" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-qq"></i> 立即加入QQ群
                 </a>
             </div>
             
-            <!-- 新增下载游戏卡片 -->
             <div class="card" style="grid-column: 1 / -1;">
                 <div class="card-header">
                     <div class="download-icon">
@@ -359,7 +371,7 @@
                 </p>
                 
                 <div class="download-notice">
-                   1.APKure无法下载请挂VPN                         /2.阿里云下载请把pdf后缀改为zip进行解压安装
+                    1.APKure无法下载请挂VPN / 2.阿里云下载请把pdf后缀改为zip进行解压安装
                 </div>
                 
                 <div class="download-options">
@@ -384,13 +396,32 @@
 
     <script>
         const copyBtn = document.getElementById('copyBtn');
+        const copyTk2Btn = document.getElementById('copyTk2Btn');
         const groupNumber = document.getElementById('groupNumber');
+        const tk2GroupNumber = document.getElementById('tk2GroupNumber');
         const successMessage = document.getElementById('successMessage');
         
         copyBtn.addEventListener('click', function() {
             const tempInput = document.createElement('input');
             tempInput.style = "position: absolute; left: -1000px; top: -1000px";
             tempInput.value = groupNumber.textContent;
+            document.body.appendChild(tempInput);
+            
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            successMessage.classList.add('show');
+            
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 1000);
+        });
+        
+        copyTk2Btn.addEventListener('click', function() {
+            const tempInput = document.createElement('input');
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = tk2GroupNumber.textContent;
             document.body.appendChild(tempInput);
             
             tempInput.select();
