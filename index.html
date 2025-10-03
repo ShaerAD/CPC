@@ -158,15 +158,15 @@
         }
         
         .download-notice {
-            color: #ff6b6b;
+            color: #1e3a8a;
             font-size: 0.85rem;
             font-weight: bold;
             margin: 10px 0;
             padding: 8px;
-            background: rgba(255, 107, 107, 0.1);
+            background: rgba(30, 58, 138, 0.1);
             border-radius: 5px;
             text-align: center;
-            border: 1px dashed #ff6b6b;
+            border: 1px dashed #1e3a8a;
         }
         
         .qq-group {
@@ -228,18 +228,31 @@
         }
         
         .btn-download {
-            background: rgba(46, 204, 113, 0.1);
+            background: rgba(30, 58, 138, 0.1);
             color: #1e3a8a;
-            border: 1px solid rgba(46, 204, 113, 0.5);
+            border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-download:hover {
-            background: rgba(46, 204, 113, 0.2);
+            background: rgba(30, 58, 138, 0.2);
         }
         
         .btn i {
             opacity: 1;
             color: #1e3a8a;
+        }
+        
+        .download-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 480px) {
+            .download-options {
+                grid-template-columns: 1fr;
+            }
         }
         
         footer {
@@ -329,10 +342,11 @@
                 </a>
             </div>
             
+            <!-- 新增下载游戏卡片 -->
             <div class="card" style="grid-column: 1 / -1;">
                 <div class="card-header">
                     <div class="download-icon">
-                        <img src="https://shaerad.github.io/P/icon.png" alt="APK">
+                        <img src="https://shaerad.github.io/P/icon.png" alt="Car Parking图标">
                     </div>
                     <div>
                         <h2 class="card-title">下载支持的游戏</h2>
@@ -341,16 +355,21 @@
                 </div>
                 
                 <p class="card-description">
-                    下载Car Parking Multiplayer 4.9.4 XAPK
+                    下载Car Parking Multiplayer XAPK
                 </p>
                 
                 <div class="download-notice">
-                    无法下载请挂VPN
+                   1.APKure无法下载请挂VPN                         /2.阿里云下载请把pdf后缀改为zip进行解压安装
                 </div>
                 
-                <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
-                    <i class="fas fa-download"></i> 下载Car Parking
-                </a>
+                <div class="download-options">
+                    <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> APKpure下载
+                    </a>
+                    <a href="https://www.alipan.com/t/ZPaqnr1ohxebtTG6bxwW" class="btn btn-download" target="_blank">
+                        <i class="fas fa-cloud-download-alt"></i> 阿里云下载
+                    </a>
+                </div>
             </div>
         </div>
         
