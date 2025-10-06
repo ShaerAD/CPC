@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加入我们</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            /* 原始人社区 */
+           
+            background: url('https://youke1.picui.cn/s1/2025/10/06/68e3679c12054.png') no-repeat center center;
+            background-size: 110% 60%;
+            background-color: #6ecbf5;
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+        }
+        
+        header {
+            background: linear-gradient(to right, rgba(18, 183, 245, 0.05), rgba(7, 112, 227, 0.05));
+            color: #1e3a8a;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+            opacity: 1;
+        }
+        
+        header p {
+            opacity: 1;
+            color: #1e3a8a;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 650px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                padding: 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .qq-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 2rem;
+            color: white;
+            opacity: 1;
+            overflow: hidden;
+        }
+        
+        .qq-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .download-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            background: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .download-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .news-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 15px;
+            background: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .news-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #1e3a8a;
+            margin-bottom: 5px;
+            opacity: 1;
+        }
+        
+        .card-header p {
+            color: #1e3a8a;
+            opacity: 1;
+        }
+        
+        .card-description {
+            color: #1e3a8a;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            opacity: 1;
+        }
+        
+        .download-notice {
+            color: #1e3a8a;
+            font-size: 0.85rem;
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 8px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            border: 1px dashed #1e3a8a;
+        }
+        
+        .qq-group {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(249, 249, 249, 0.05);
+            border-radius: 8px;
+            text-align: center;
+            border: 1px dashed rgba(30, 58, 138, 0.5);
+            opacity: 1;
+        }
+        
+        .news-image {
+            width: 100%;
+            border-radius: 10px;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        
+        .btn-primary {
+            background: rgba(18, 183, 245, 0.05);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(30, 58, 138, 0.1);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 159, 67, 0.05);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(30, 58, 138, 0.1);
+        }
+        
+        .btn-copy {
+            background: rgba(108, 92, 231, 0.05);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
+        }
+        
+        .btn-copy:hover {
+            background: rgba(30, 58, 138, 0.1);
+        }
+        
+        .btn-download {
+            background: rgba(30, 58, 138, 0.1);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
+        }
+        
+        .btn-download:hover {
+            background: rgba(30, 58, 138, 0.2);
+        }
+        
+        .btn-community {
+            background: rgba(46, 204, 113, 0.1);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
+        }
+        
+        .btn-community:hover {
+            background: rgba(46, 204, 113, 0.2);
+        }
+        
+        .btn i {
+            opacity: 1;
+            color: #1e3a8a;
+        }
+        
+        .download-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        @media (max-width: 480px) {
+            .download-options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #1e3a8a;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(30, 58, 138, 0.3);
+            opacity: 1;
+        }
+        
+        .success-message {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(46, 204, 113, 0.9);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateX(150%);
+            transition: transform 0.4s;
+            z-index: 1000;
+            opacity: 1;
+        }
+        
+        .success-message.show {
+            transform: translateX(0);
+        }
+        
+        .success-message i {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>加入我们</h1>
+            <p>C.P.C社区</p>
+        </header>
+        
+        <div class="content">
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="news-icon">
+                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e36a6adf82c.png" alt="最新资讯图标">
+                    </div>
+                    <div>
+                        <h2 class="card-title">今日头条</h2>
+                        <p>群内容 每日更新</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    当前状态:10.6
+                </p>
+                
+                <img src="https://youke1.picui.cn/s1/2025/10/06/68e36c1340ae7.jpg" alt="每日新闻" class="news-image">
+                
+                <div class="download-notice">
+                    来源:RX
+                </div>
+                
+                <a href="https://shaerad.github.io/CPC1/" class="btn btn-community" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> 跳转至社群精选
+                </a>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="qq-icon">
+                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e3679c12054.png" alt="C.P.C图标">
+                    </div>
+                    <div>
+                        <h2 class="card-title">C.P.C社群</h2>
+                        <p>SHAER</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    加入免费获取随机车辆
+                </p>
+                
+                <div class="qq-group" id="groupNumber">1057916990</div>
+                
+                <button class="btn btn-copy" id="copyBtn">
+                    <i class="fas fa-copy"></i> 复制群号
+                </button>
+                
+                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=XMVzBqWYbOFYN8MuLCT7mb7lkpQPgkMyuFJsP%2B5M%2BFWtIXpgLg9hU44krstDI%2FqJ&busi_data=eyJncm91cENvZGUiOiIxMDU3OTE2OTkwIiwidG9rZW4iOiJSeWhDUmZQZFE4V0dlMmZBb0JZYytoNExldGVkUmFMamRvYnlHTzduT3FxbkQvUlVaYU54MnE2WlVNUmd6clhYIiwidWluIjoiMjA4NDQ1OTYwOCJ9&data=MHKExMbrX-9GBgGZkr_gSuUBvAt2HqYnspieg0DyWa3nUlLiTgrLHvi0SmPsvCv89eLg54S-Ljy7LMcFscLGMw&svctype=4&tempid=h5_group_info" class="btn btn-primary" target="_blank">
+                    <i class="fab fa-qq"></i> 加入QQ群
+                </a>
+            </div>
+            
+            <div class="card">
+                <div class="card-header">
+                    <div class="qq-icon">
+                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e3679ada307.jpg" alt="TK2图标">
+                    </div>
+                    <div>
+                        <h2 class="card-title">TK2</h2>
+                        <p>我不吃香菜</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    加入TK2警涂制作经验分享群
+                </p>
+                
+                <div class="qq-group" id="tk2GroupNumber">684300707</div>
+                
+                <button class="btn btn-copy" id="copyTk2Btn">
+                    <i class="fas fa-copy"></i> 复制群号
+                </button>
+                
+                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=0dH79%2BTBIZRGIc%2BgyxBMxnck0DgGNcYVSz0LZUs87%2BivKTf5CZtIvQrSXFK2jD5C&busi_data=eyJncm91cENvZGUiOiI2ODQzMDA3MDciLCJ0b2tlbiI6Iis2VXEwUlBpcTZWMDQwQnBQd0V4SWVUL1laZ3V1RWpwY1ovNFIrMUhOVUliWGRsZXVQbGhiY0dSd0ozZFo2YXAiLCJ1aW4iOiIyMDg0NDU5NjA4In0%3D&data=l4imjnyOsjd8cFyLlpdtFEL0bo_Gw7IgXCufVeZVGNd17f4baO98i8QV93UPDtTvAEM3vzSdTSjEMIy-Ki4uZQ&svctype=4&tempid=h5_group_info" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-qq"></i> 加入QQ群
+                </a>
+            </div>
+            
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="download-icon">
+                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e367e66b0c9.jpg" alt="Car Parking图标">
+                    </div>
+                    <div>
+                        <h2 class="card-title">下载支持的游戏</h2>
+                        <p>Car Parking Multiplayer</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    下载Car Parking Multiplayer XAPK
+                </p>
+                
+                <div class="download-notice">
+                    1.APKure无法下载请挂VPN / 2.阿里云下载请把pdf后缀改为zip进行解压安装
+                </div>
+                
+                <div class="download-options">
+                    <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> APKpure下载
+                    </a>
+                    <a href="https://www.alipan.com/t/ZPaqnr1ohxebtTG6bxwW" class="btn btn-download" target="_blank">
+                        <i class="fas fa-cloud-download-alt"></i> 阿里云下载
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 C.P.C SHAER</p>
+        </footer>
+    </div>
+    
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i> 群号已复制到剪贴板
+    </div>
+
+    <script>
+        const copyBtn = document.getElementById('copyBtn');
+        const copyTk2Btn = document.getElementById('copyTk2Btn');
+        const groupNumber = document.getElementById('groupNumber');
+        const tk2GroupNumber = document.getElementById('tk2GroupNumber');
+        const successMessage = document.getElementById('successMessage');
+        
+        copyBtn.addEventListener('click', function() {
+            const tempInput = document.createElement('input');
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = groupNumber.textContent;
+            document.body.appendChild(tempInput);
+            
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            successMessage.classList.add('show');
+            
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 1000);
+        });
+        
+        copyTk2Btn.addEventListener('click', function() {
+            const tempInput = document.createElement('input');
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = tk2GroupNumber.textContent;
+            document.body.appendChild(tempInput);
+            
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            successMessage.classList.add('show');
+            
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
