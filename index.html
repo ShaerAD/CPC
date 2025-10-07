@@ -14,25 +14,20 @@
         }
         
         body {
-            /* 原始人社区 */
-           
             background: url('https://youke1.picui.cn/s1/2025/10/06/68e3679c12054.png') no-repeat center center;
-            background-size: 110% 60%;
+            background-size: cover;
             background-color: #6ecbf5;
             background-attachment: fixed;
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             padding: 20px;
-            position: relative;
         }
         
         .container {
-            max-width: 800px;
+            max-width: 1400px;
             width: 100%;
+            margin: 0 auto;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
@@ -43,53 +38,86 @@
         header {
             background: linear-gradient(to right, rgba(18, 183, 245, 0.05), rgba(7, 112, 227, 0.05));
             color: #1e3a8a;
-            padding: 30px;
+            padding: 40px 30px;
             text-align: center;
         }
         
         h1 {
-            font-size: 2.2rem;
-            margin-bottom: 10px;
+            font-size: 2.8rem;
+            margin-bottom: 15px;
             color: #1e3a8a;
-            opacity: 1;
         }
         
         header p {
-            opacity: 1;
+            font-size: 1.2rem;
             color: #1e3a8a;
         }
         
         .content {
-            padding: 30px;
+            padding: 40px;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
             gap: 30px;
         }
         
-        @media (max-width: 650px) {
+        @media (min-width: 1200px) {
+            .content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .card:first-child {
+                grid-column: 1 / -1;
+            }
+            
+            .card:nth-last-child(-n+2) {
+                grid-column: span 1;
+            }
+            
+            .card:last-child {
+                grid-column: 1 / -1;
+            }
+        }
+        
+        @media (max-width: 1199px) and (min-width: 768px) {
             .content {
                 grid-template-columns: 1fr;
             }
             
-            header {
+            .container {
+                max-width: 800px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .content {
+                grid-template-columns: 1fr;
                 padding: 20px;
+                gap: 20px;
+            }
+            
+            header {
+                padding: 25px 20px;
             }
             
             h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             body {
                 padding: 10px;
+            }
+            
+            .container {
+                max-width: 100%;
             }
         }
         
         .card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -97,154 +125,112 @@
         
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
         
         .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
-        .qq-icon {
-            width: 70px;
-            height: 70px;
+        .qq-icon, .contact-icon {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background: #1e3a8a;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            font-size: 2rem;
+            margin-right: 20px;
+            font-size: 2.2rem;
             color: white;
-            opacity: 1;
             overflow: hidden;
+            flex-shrink: 0;
         }
         
-        .qq-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .download-icon {
-            width: 70px;
-            height: 70px;
+        .download-icon, .news-icon {
+            width: 80px;
+            height: 80px;
             border-radius: 15px;
             background: #1e3a8a;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
+            margin-right: 20px;
             overflow: hidden;
+            flex-shrink: 0;
         }
         
-        .download-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .news-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 15px;
-            background: #1e3a8a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            overflow: hidden;
-        }
-        
-        .news-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: #1e3a8a;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            overflow: hidden;
-        }
-        
-        .contact-icon img {
+        .qq-icon img, .contact-icon img,
+        .download-icon img, .news-icon img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
         
         .card-title {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #1e3a8a;
-            margin-bottom: 5px;
-            opacity: 1;
+            margin-bottom: 8px;
         }
         
         .card-header p {
             color: #1e3a8a;
-            opacity: 1;
+            font-size: 1.1rem;
         }
         
         .card-description {
             color: #1e3a8a;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 25px;
             flex-grow: 1;
-            opacity: 1;
         }
         
         .download-notice {
             color: #1e3a8a;
-            font-size: 0.85rem;
+            font-size: 1rem;
             font-weight: bold;
-            margin: 10px 0;
-            padding: 8px;
+            margin: 15px 0;
+            padding: 12px;
             background: rgba(30, 58, 138, 0.1);
-            border-radius: 5px;
+            border-radius: 8px;
             text-align: center;
             border: 1px dashed #1e3a8a;
         }
         
         .qq-group {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: bold;
             color: #1e3a8a;
-            margin: 15px 0;
-            padding: 10px;
+            margin: 20px 0;
+            padding: 15px;
             background: rgba(249, 249, 249, 0.05);
-            border-radius: 8px;
+            border-radius: 10px;
             text-align: center;
             border: 1px dashed rgba(30, 58, 138, 0.5);
-            opacity: 1;
         }
         
         .news-image {
             width: 100%;
-            border-radius: 10px;
-            margin: 15px 0;
+            border-radius: 12px;
+            margin: 20px 0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .btn {
             display: block;
             width: 100%;
-            padding: 14px;
+            padding: 16px;
             border: none;
-            border-radius: 10px;
-            font-size: 1.1rem;
+            border-radius: 12px;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             text-align: center;
             text-decoration: none;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         
         .btn-primary {
@@ -308,45 +294,59 @@
         }
         
         .btn i {
-            opacity: 1;
             color: #1e3a8a;
+            margin-right: 8px;
         }
         
         .download-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 15px;
+            margin-top: 20px;
         }
         
         @media (max-width: 480px) {
             .download-options {
                 grid-template-columns: 1fr;
             }
+            
+            .qq-icon, .contact-icon,
+            .download-icon, .news-icon {
+                width: 60px;
+                height: 60px;
+                margin-right: 15px;
+            }
+            
+            .card-title {
+                font-size: 1.4rem;
+            }
+            
+            .card-header p {
+                font-size: 0.9rem;
+            }
         }
         
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             color: #1e3a8a;
-            font-size: 0.9rem;
+            font-size: 1rem;
             border-top: 1px solid rgba(30, 58, 138, 0.3);
-            opacity: 1;
         }
         
         .success-message {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 30px;
+            right: 30px;
             background: rgba(46, 204, 113, 0.9);
             color: white;
-            padding: 15px 25px;
-            border-radius: 10px;
+            padding: 20px 30px;
+            border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transform: translateX(150%);
             transition: transform 0.4s;
             z-index: 1000;
-            opacity: 1;
+            font-size: 1.1rem;
         }
         
         .success-message.show {
@@ -354,7 +354,7 @@
         }
         
         .success-message i {
-            opacity: 1;
+            margin-right: 10px;
         }
     </style>
 </head>
@@ -366,7 +366,7 @@
         </header>
         
         <div class="content">
-            <div class="card" style="grid-column: 1 / -1;">
+            <div class="card">
                 <div class="card-header">
                     <div class="news-icon">
                         <img src="https://youke1.picui.cn/s1/2025/10/06/68e36a6adf82c.png" alt="最新资讯图标">
@@ -378,10 +378,10 @@
                 </div>
                 
                 <p class="card-description">
-                    当前状态:10.6
+                    当前状态:
                 </p>
                 
-                <img src="https://youke1.picui.cn/s1/2025/10/06/68e36c1340ae7.jpg" alt="每日新闻" class="news-image">
+                <img src="https://youke1.picui.cn/s1/2025/10/07/68e4df837e944.png" alt="每日新闻" class="news-image">
                 
                 <div class="download-notice">
                     来源:RX
@@ -444,7 +444,7 @@
                 </a>
             </div>
             
-            <div class="card" style="grid-column: 1 / -1;">
+            <div class="card">
                 <div class="card-header">
                     <div class="download-icon">
                         <img src="https://youke1.picui.cn/s1/2025/10/06/68e367e66b0c9.jpg" alt="Car Parking图标">
@@ -472,7 +472,8 @@
                     </a>
                 </div>
             </div>
-            <div class="card" style="grid-column: 1 / -1;">
+            
+            <div class="card">
                 <div class="card-header">
                     <div class="download-icon">
                         <img src="https://youke1.picui.cn/s1/2025/10/07/68e4d1823a170.png" alt="Car Simulator 2图标">
@@ -501,8 +502,7 @@
                 </div>
             </div>
             
-            <!-- 學會1+1才可查看 -->
-            <div class="card" style="grid-column: 1 / -1;">
+            <div class="card">
                 <div class="card-header">
                     <div class="contact-icon">
                         <img src="https://youke1.picui.cn/s1/2025/10/07/68e4c8c184634.jpg" alt="聰明人">
