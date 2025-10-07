@@ -162,6 +162,24 @@
             object-fit: cover;
         }
         
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: #1e3a8a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        
+        .contact-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
         .card-title {
             font-size: 1.5rem;
             color: #1e3a8a;
@@ -277,6 +295,16 @@
         
         .btn-community:hover {
             background: rgba(46, 204, 113, 0.2);
+        }
+        
+        .btn-contact {
+            background: rgba(155, 89, 182, 0.1);
+            color: #1e3a8a;
+            border: 1px solid rgba(30, 58, 138, 0.5);
+        }
+        
+        .btn-contact:hover {
+            background: rgba(155, 89, 182, 0.2);
         }
         
         .btn i {
@@ -439,10 +467,37 @@
                     <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
                         <i class="fas fa-download"></i> APKpure下载
                     </a>
-                    <a href="https://www.alipan.com/t/ZPaqnr1ohxebtTG6bxwW" class="btn btn-download" target="_blank">
-                        <i class="fas fa-cloud-download-alt"></i> 阿里云下载
+                    <a href="https://www.hostize.com/v/dk1Laolf4n" target="_blank">
+                        <i class="fas fa-cloud-download-alt"></i> APK直裝
                     </a>
                 </div>
+            </div>
+            
+            <!-- 學會1+1才可查看 -->
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="contact-icon">
+                        <img src="https://youke1.picui.cn/s1/2025/10/07/68e4c8c184634.jpg" alt="聰明人">
+                    </div>
+                    <div>
+                        <h2 class="card-title">Shaer</h2>
+                        <p>C.P.C 2025</p>
+                    </div>
+                </div>
+                
+                <p class="card-description">
+                    合作聯繫
+                </p>
+                
+                <div class="qq-group" id="contactNumber">2084459608</div>
+                
+                <button class="btn btn-copy" id="copyContactBtn">
+                    <i class="fas fa-copy"></i> 复制QQ号
+                </button>
+                
+                <a href="https://ShaerAD.github.io/RX/" target="_blank">
+                    <i class="fab fa-qq"></i> 加入更多-RX
+                </a>
             </div>
         </div>
         
@@ -458,8 +513,10 @@
     <script>
         const copyBtn = document.getElementById('copyBtn');
         const copyTk2Btn = document.getElementById('copyTk2Btn');
+        const copyContactBtn = document.getElementById('copyContactBtn');
         const groupNumber = document.getElementById('groupNumber');
         const tk2GroupNumber = document.getElementById('tk2GroupNumber');
+        const contactNumber = document.getElementById('contactNumber');
         const successMessage = document.getElementById('successMessage');
         
         copyBtn.addEventListener('click', function() {
@@ -483,6 +540,23 @@
             const tempInput = document.createElement('input');
             tempInput.style = "position: absolute; left: -1000px; top: -1000px";
             tempInput.value = tk2GroupNumber.textContent;
+            document.body.appendChild(tempInput);
+            
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            
+            successMessage.classList.add('show');
+            
+            setTimeout(function() {
+                successMessage.classList.remove('show');
+            }, 1000);
+        });
+        
+        copyContactBtn.addEventListener('click', function() {
+            const tempInput = document.createElement('input');
+            tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+            tempInput.value = contactNumber.textContent;
             document.body.appendChild(tempInput);
             
             tempInput.select();
