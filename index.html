@@ -21,14 +21,14 @@
             color: #333;
             line-height: 1.6;
             min-height: 100vh;
-            padding: 20px;
+            padding: 15px;
         }
         
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
             overflow: hidden;
@@ -36,16 +36,17 @@
         }
         
         header {
-            background: linear-gradient(to right, rgba(18, 183, 245, 0.05), rgba(7, 112, 227, 0.05));
+            background: linear-gradient(to right, rgba(18, 183, 245, 0.1), rgba(7, 112, 227, 0.1));
             color: #1e3a8a;
-            padding: 40px 30px;
+            padding: 40px 20px;
             text-align: center;
         }
         
         h1 {
-            font-size: 2.8rem;
+            font-size: 2.2rem;
             margin-bottom: 15px;
             color: #1e3a8a;
+            line-height: 1.2;
         }
         
         header p {
@@ -54,73 +55,29 @@
         }
         
         .content {
-            padding: 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 30px;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
         }
         
-        @media (min-width: 1200px) {
-            .content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .card:first-child {
-                grid-column: 1 / -1;
-            }
-            
-            .card:nth-last-child(-n+2) {
-                grid-column: span 1;
-            }
-            
-            .card:last-child {
-                grid-column: 1 / -1;
-            }
-        }
-        
-        @media (max-width: 1199px) and (min-width: 768px) {
-            .content {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                max-width: 800px;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .content {
-                grid-template-columns: 1fr;
-                padding: 20px;
-                gap: 20px;
-            }
-            
-            header {
-                padding: 25px 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            body {
-                padding: 10px;
-            }
-            
-            .container {
-                max-width: 100%;
-            }
+        .section-title {
+            font-size: 1.6rem;
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(30, 58, 138, 0.3);
         }
         
         .card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 15px;
-            padding: 30px;
+            padding: 25px 20px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s, box-shadow 0.3s;
             display: flex;
             flex-direction: column;
-            height: 100%;
+            width: 100%;
         }
         
         .card:hover {
@@ -131,33 +88,33 @@
         .card-header {
             display: flex;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .qq-icon, .contact-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
             background: #1e3a8a;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
-            font-size: 2.2rem;
+            margin-right: 18px;
+            font-size: 1.8rem;
             color: white;
             overflow: hidden;
             flex-shrink: 0;
         }
         
         .download-icon, .news-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 15px;
             background: #1e3a8a;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 20px;
+            margin-right: 18px;
             overflow: hidden;
             flex-shrink: 0;
         }
@@ -170,97 +127,102 @@
         }
         
         .card-title {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #1e3a8a;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
+            line-height: 1.3;
         }
         
         .card-header p {
             color: #1e3a8a;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
         
         .card-description {
             color: #1e3a8a;
-            font-size: 1.1rem;
-            margin-bottom: 25px;
+            font-size: 1rem;
+            margin-bottom: 20px;
             flex-grow: 1;
+            line-height: 1.5;
         }
         
         .download-notice {
             color: #1e3a8a;
-            font-size: 1rem;
+            font-size: 0.9rem;
             font-weight: bold;
-            margin: 15px 0;
-            padding: 12px;
+            margin: 12px 0;
+            padding: 10px;
             background: rgba(30, 58, 138, 0.1);
             border-radius: 8px;
             text-align: center;
             border: 1px dashed #1e3a8a;
+            line-height: 1.4;
         }
         
         .qq-group {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: #1e3a8a;
-            margin: 20px 0;
-            padding: 15px;
-            background: rgba(249, 249, 249, 0.05);
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(249, 249, 249, 0.1);
             border-radius: 10px;
             text-align: center;
             border: 1px dashed rgba(30, 58, 138, 0.5);
+            line-height: 1.4;
         }
         
         .news-image {
             width: 100%;
             border-radius: 12px;
-            margin: 20px 0;
+            margin: 15px 0;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
         
         .btn {
             display: block;
             width: 100%;
-            padding: 16px;
+            padding: 14px;
             border: none;
-            border-radius: 12px;
-            font-size: 1.2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             text-align: center;
             text-decoration: none;
-            margin-top: 12px;
+            margin-top: 10px;
+            line-height: 1.4;
         }
         
         .btn-primary {
-            background: rgba(18, 183, 245, 0.05);
+            background: rgba(18, 183, 245, 0.1);
             color: #1e3a8a;
             border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-primary:hover {
-            background: rgba(30, 58, 138, 0.1);
+            background: rgba(30, 58, 138, 0.15);
         }
         
         .btn-secondary {
-            background: rgba(255, 159, 67, 0.05);
+            background: rgba(255, 159, 67, 0.1);
             color: #1e3a8a;
             border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-secondary:hover {
-            background: rgba(30, 58, 138, 0.1);
+            background: rgba(30, 58, 138, 0.15);
         }
         
         .btn-copy {
-            background: rgba(108, 92, 231, 0.05);
+            background: rgba(108, 92, 231, 0.1);
             color: #1e3a8a;
             border: 1px solid rgba(30, 58, 138, 0.5);
         }
         
         .btn-copy:hover {
-            background: rgba(30, 58, 138, 0.1);
+            background: rgba(30, 58, 138, 0.15);
         }
         
         .btn-download {
@@ -299,54 +261,34 @@
         }
         
         .download-options {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        @media (max-width: 480px) {
-            .download-options {
-                grid-template-columns: 1fr;
-            }
-            
-            .qq-icon, .contact-icon,
-            .download-icon, .news-icon {
-                width: 60px;
-                height: 60px;
-                margin-right: 15px;
-            }
-            
-            .card-title {
-                font-size: 1.4rem;
-            }
-            
-            .card-header p {
-                font-size: 0.9rem;
-            }
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
         }
         
         footer {
             text-align: center;
-            padding: 25px;
+            padding: 20px;
             color: #1e3a8a;
-            font-size: 1rem;
+            font-size: 0.9rem;
             border-top: 1px solid rgba(30, 58, 138, 0.3);
         }
         
         .success-message {
             position: fixed;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             background: rgba(46, 204, 113, 0.9);
             color: white;
-            padding: 20px 30px;
-            border-radius: 12px;
+            padding: 15px 20px;
+            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transform: translateX(150%);
             transition: transform 0.4s;
             z-index: 1000;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            max-width: 80%;
         }
         
         .success-message.show {
@@ -354,7 +296,127 @@
         }
         
         .success-message i {
-            margin-right: 10px;
+            margin-right: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            header {
+                padding: 50px 30px;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            header p {
+                font-size: 1.4rem;
+            }
+            
+            .content {
+                padding: 40px 30px;
+                gap: 30px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+            
+            .card {
+                padding: 30px;
+            }
+            
+            .card-header {
+                margin-bottom: 25px;
+            }
+            
+            .qq-icon, .contact-icon,
+            .download-icon, .news-icon {
+                width: 80px;
+                height: 80px;
+                margin-right: 20px;
+                font-size: 2.2rem;
+            }
+            
+            .card-title {
+                font-size: 1.8rem;
+            }
+            
+            .card-header p {
+                font-size: 1.1rem;
+            }
+            
+            .card-description {
+                font-size: 1.1rem;
+                margin-bottom: 25px;
+            }
+            
+            .download-notice {
+                font-size: 1rem;
+                margin: 15px 0;
+                padding: 12px;
+            }
+            
+            .qq-group {
+                font-size: 1.5rem;
+                margin: 20px 0;
+                padding: 15px;
+            }
+            
+            .news-image {
+                margin: 20px 0;
+            }
+            
+            .btn {
+                padding: 16px;
+                font-size: 1.2rem;
+                margin-top: 12px;
+            }
+            
+            .download-options {
+                flex-direction: row;
+                gap: 15px;
+                margin-top: 20px;
+            }
+            
+            footer {
+                padding: 25px;
+                font-size: 1rem;
+            }
+            
+            .success-message {
+                top: 30px;
+                right: 30px;
+                padding: 20px 30px;
+                font-size: 1.1rem;
+            }
+        }
+      
+        @media (min-width: 1024px) {
+            .content {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .news-section {
+                grid-column: 1 / -1;
+            }
+            
+            .games-section {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 30px;
+            }
+            
+            .games-section .card {
+                margin-bottom: 0;
+            }
         }
     </style>
 </head>
@@ -366,194 +428,207 @@
         </header>
         
         <div class="content">
-            <div class="card">
-                <div class="card-header">
-                    <div class="news-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e36a6adf82c.png" alt="最新资讯图标">
+            <div class="news-section">
+                <h2 class="section-title">最新资讯</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="news-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/06/68e36a6adf82c.png" alt="最新资讯图标">
+                        </div>
+                        <div>
+                            <h2 class="card-title">今日头条</h2>
+                            <p>群内容 每日更新</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="card-title">今日头条</h2>
-                        <p>群内容 每日更新</p>
+                    
+                    <p class="card-description">
+                        当前状态:
+                    </p>
+                    
+                    <img src="https://youke1.picui.cn/s1/2025/10/07/68e4df837e944.png" alt="每日新闻" class="news-image">
+                    
+                    <div class="download-notice">
+                        来源:RX
                     </div>
-                </div>
-                
-                <p class="card-description">
-                    当前状态:
-                </p>
-                
-                <img src="https://youke1.picui.cn/s1/2025/10/07/68e4df837e944.png" alt="每日新闻" class="news-image">
-                
-                <div class="download-notice">
-                    来源:RX
-                </div>
-                
-                <a href="https://shaerad.github.io/CPC1/" class="btn btn-community" target="_blank">
-                    <i class="fas fa-external-link-alt"></i> 跳转至社群精选
-                </a>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="qq-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e3679c12054.png" alt="C.P.C图标">
-                    </div>
-                    <div>
-                        <h2 class="card-title">C.P.C社群</h2>
-                        <p>SHAER</p>
-                    </div>
-                </div>
-                
-                <p class="card-description">
-                    加入免费获取随机车辆
-                </p>
-                
-                <div class="qq-group" id="groupNumber">1057916990</div>
-                
-                <button class="btn btn-copy" id="copyBtn">
-                    <i class="fas fa-copy"></i> 复制群号
-                </button>
-                
-                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=XMVzBqWYbOFYN8MuLCT7mb7lkpQPgkMyuFJsP%2B5M%2BFWtIXpgLg9hU44krstDI%2FqJ&busi_data=eyJncm91cENvZGUiOiIxMDU3OTE2OTkwIiwidG9rZW4iOiJSeWhDUmZQZFE4V0dlMmZBb0JZYytoNExldGVkUmFMamRvYnlHTzduT3FxbkQvUlVaYU54MnE2WlVNUmd6clhYIiwidWluIjoiMjA4NDQ1OTYwOCJ9&data=MHKExMbrX-9GBgGZkr_gSuUBvAt2HqYnspieg0DyWa3nUlLiTgrLHvi0SmPsvCv89eLg54S-Ljy7LMcFscLGMw&svctype=4&tempid=h5_group_info" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-qq"></i> 加入QQ群
-                </a>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="qq-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e3679ada307.jpg" alt="TK2图标">
-                    </div>
-                    <div>
-                        <h2 class="card-title">TK2</h2>
-                        <p>我不吃香菜</p>
-                    </div>
-                </div>
-                
-                <p class="card-description">
-                    加入TK2警涂制作经验分享群
-                </p>
-                
-                <div class="qq-group" id="tk2GroupNumber">684300707</div>
-                
-                <button class="btn btn-copy" id="copyTk2Btn">
-                    <i class="fas fa-copy"></i> 复制群号
-                </button>
-                
-                <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=0dH79%2BTBIZRGIc%2BgyxBMxnck0DgGNcYVSz0LZUs87%2BivKTf5CZtIvQrSXFK2jD5C&busi_data=eyJncm91cENvZGUiOiI2ODQzMDA3MDciLCJ0b2tlbiI6Iis2VXEwUlBpcTZWMDQwQnBQd0V4SWVUL1laZ3V1RWpwY1ovNFIrMUhOVUliWGRsZXVQbGhiY0dSd0ozZFo2YXAiLCJ1aW4iOiIyMDg0NDU5NjA4In0%3D&data=l4imjnyOsjd8cFyLlpdtFEL0bo_Gw7IgXCufVeZVGNd17f4baO98i8QV93UPDtTvAEM3vzSdTSjEMIy-Ki4uZQ&svctype=4&tempid=h5_group_info" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-qq"></i> 加入QQ群
-                </a>
-            </div>
-            
-            <div class="card">
-                <div class="card-header">
-                    <div class="download-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/06/68e367e66b0c9.jpg" alt="Car Parking图标">
-                    </div>
-                    <div>
-                        <h2 class="card-title">下载支持的游戏</h2>
-                        <p>Car Parking Multiplayer</p>
-                    </div>
-                </div>
-                
-                <p class="card-description">
-                    下载Car Parking Multiplayer XAPK
-                </p>
-                
-                <div class="download-notice">
-                    1.APKure无法下载请挂VPN / 2.阿里云下载请把pdf后缀改为zip进行解压安装
-                </div>
-                
-                <div class="download-options">
-                    <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
-                        <i class="fas fa-download"></i> APKpure下载
-                    </a>
-                    <a href="https://www.hostize.com/v/dk1Laolf4n" class="btn btn-download" target="_blank">
-                        <i class="fas fa-cloud-download-alt"></i> APK直裝
+                    
+                    <a href="https://shaerad.github.io/CPC1/" class="btn btn-community" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> 跳转至社群精选
                     </a>
                 </div>
             </div>
             
-            <div class="card">
-                <div class="card-header">
-                    <div class="download-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/07/68e4d1823a170.png" alt="Car Simulator 2图标">
+            <div class="community-section">
+                <h2 class="section-title">社群信息</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="qq-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/06/68e3679c12054.png" alt="C.P.C图标">
+                        </div>
+                        <div>
+                            <h2 class="card-title">C.P.C社群</h2>
+                            <p>SHAER</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="card-title">下载支持的游戏</h2>
-                        <p>Car Simulator 2</p>
-                    </div>
-                </div>
-                
-                <p class="card-description">
-                    下载Car Simulator 2 1.57.41
-                </p>
-                
-                <div class="download-notice">
-                    1.未及時同步更新請聯繫shaer
-                </div>
-                
-                <div class="download-options">
-                    <a href="https://www.hostize.com/zh/v/-CzNEgn-BR" class="btn btn-download" target="_blank">
-                        <i class="fas fa-download"></i> 破解版下載
+                    
+                    <p class="card-description">
+                        加入免费获取随机车辆
+                    </p>
+                    
+                    <div class="qq-group" id="groupNumber">1057916990</div>
+                    
+                    <button class="btn btn-copy" id="copyBtn">
+                        <i class="fas fa-copy"></i> 复制群号
+                    </button>
+                    
+                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=XMVzBqWYbOFYN8MuLCT7mb7lkpQPgkMyuFJsP%2B5M%2BFWtIXpgLg9hU44krstDI%2FqJ&busi_data=eyJncm91cENvZGUiOiIxMDU3OTE2OTkwIiwidG9rZW4iOiJSeWhDUmZQZFE4V0dlMmZBb0JZYytoNExldGVkUmFMamRvYnlHTzduT3FxbkQvUlVaYU54MnE2WlVNUmd6clhYIiwidWluIjoiMjA4NDQ1OTYwOCJ9&data=MHKExMbrX-9GBgGZkr_gSuUBvAt2HqYnspieg0DyWa3nUlLiTgrLHvi0SmPsvCv89eLg54S-Ljy7LMcFscLGMw&svctype=4&tempid=h5_group_info" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-qq"></i> 加入QQ群
                     </a>
-                    <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web" class="btn btn-download" target="_blank">
-                        <i class="fas fa-cloud-download-alt"></i> 正版下載
-                    </a>
                 </div>
-            </div>
-<div class="card">
-                <div class="card-header">
-                    <div class="download-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/07/68e4e40a46d0e.png" alt="New Car Simulator 2图标">
+                
+                <div class="card">
+                    <div class="card-header">
+                        <div class="qq-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/06/68e3679ada307.jpg" alt="TK2图标">
+                        </div>
+                        <div>
+                            <h2 class="card-title">TK2</h2>
+                            <p>我不吃香菜</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="card-title">下载支持的游戏</h2>
-                        <p>New Car Simulator 2</p>
-                    </div>
-                </div>
-                
-                <p class="card-description">
-                    下载New Car Simulator 2 9.0
-                </p>
-                
-                <div class="download-notice">
-                    1.未及時同步更新請聯繫shaer
-                </div>
-                
-                <div class="download-options">
-                    <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web" class="btn btn-download" target="_blank">
-                        <i class="fas fa-download"></i> 搶先版試玩
-                    </a>
-                    <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web" class="btn btn-download" target="_blank">
-                        <i class="fas fa-cloud-download-alt"></i> 正版下載
+                    
+                    <p class="card-description">
+                        加入TK2警涂制作经验分享群
+                    </p>
+                    
+                    <div class="qq-group" id="tk2GroupNumber">684300707</div>
+                    
+                    <button class="btn btn-copy" id="copyTk2Btn">
+                        <i class="fas fa-copy"></i> 复制群号
+                    </button>
+                    
+                    <a href="https://qun.qq.com/universal-share/share?ac=1&authKey=0dH79%2BTBIZRGIc%2BgyxBMxnck0DgGNcYVSz0LZUs87%2BivKTf5CZtIvQrSXFK2jD5C&busi_data=eyJncm91cENvZGUiOiI2ODQzMDA3MDciLCJ0b2tlbiI6Iis2VXEwUlBpcTZWMDQwQnBQd0V4SWVUL1laZ3V1RWpwY1ovNFIrMUhOVUliWGRsZXVQbGhiY0dSd0ozZFo2YXAiLCJ1aW4iOiIyMDg0NDU5NjA4In0%3D&data=l4imjnyOsjd8cFyLlpdtFEL0bo_Gw7IgXCufVeZVGNd17f4baO98i8QV93UPDtTvAEM3vzSdTSjEMIy-Ki4uZQ&svctype=4&tempid=h5_group_info" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-qq"></i> 加入QQ群
                     </a>
                 </div>
             </div>
             
-            <div class="card">
-                <div class="card-header">
-                    <div class="contact-icon">
-                        <img src="https://youke1.picui.cn/s1/2025/10/07/68e4c8c184634.jpg" alt="聰明人">
+            <div class="games-section">
+                <h2 class="section-title">游戏下载</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="download-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/06/68e367e66b0c9.jpg" alt="Car Parking图标">
+                        </div>
+                        <div>
+                            <h2 class="card-title">Car Parking Multiplayer</h2>
+                            <p>下载支持的游戏</p>
+                        </div>
                     </div>
-                    <div>
-                        <h2 class="card-title">Shaer</h2>
-                        <p>C.P.C 2025</p>
+                    
+                    <p class="card-description">
+                        下载Car Parking Multiplayer XAPK
+                    </p>
+                    
+                    <div class="download-notice">
+                        1.APKure无法下载请挂VPN / 2.阿里云下载请把pdf后缀改为zip进行解压安装
+                    </div>
+                    
+                    <div class="download-options">
+                        <a href="https://apkpure.net/cn/car-parking-multiplayer/com.olzhas.carparking.multyplayer/download#google_vignette" class="btn btn-download" target="_blank">
+                            <i class="fas fa-download"></i> APKpure下载
+                        </a>
+                        <a href="https://www.hostize.com/v/dk1Laolf4n" class="btn btn-download" target="_blank">
+                            <i class="fas fa-cloud-download-alt"></i> APK直裝
+                        </a>
                     </div>
                 </div>
                 
-                <p class="card-description">
-                    合作聯繫
-                </p>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="download-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/07/68e4d1823a170.png" alt="Car Simulator 2图标">
+                        </div>
+                        <div>
+                            <h2 class="card-title">Car Simulator 2</h2>
+                            <p>下载支持的游戏</p>
+                        </div>
+                    </div>
+                    
+                    <p class="card-description">
+                        下载Car Simulator 2 1.57.41
+                    </p>
+                    
+                    <div class="download-notice">
+                        1.未及時同步更新請聯繫shaer
+                    </div>
+                    
+                    <div class="download-options">
+                        <a href="https://www.hostize.com/zh/v/-CzNEgn-BR" class="btn btn-download" target="_blank">
+                            <i class="fas fa-download"></i> 破解版下載
+                        </a>
+                        <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web" class="btn btn-download" target="_blank">
+                            <i class="fas fa-cloud-download-alt"></i> 正版下載
+                        </a>
+                    </div>
+                </div>
                 
-                <div class="qq-group" id="contactNumber">2084459608</div>
-                
-                <button class="btn btn-copy" id="copyContactBtn">
-                    <i class="fas fa-copy"></i> 复制QQ号
-                </button>
-                
-                <a href="https://ShaerAD.github.io/RX/" class="btn btn-contact" target="_blank">
-                    <i class="fab fa-qq"></i> 加入更多-RX
-                </a>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="download-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/07/68e4e40a46d0e.png" alt="New Car Simulator 2图标">
+                        </div>
+                        <div>
+                            <h2 class="card-title">New Car Simulator 2</h2>
+                            <p>下载支持的游戏</p>
+                        </div>
+                    </div>
+                    
+                    <p class="card-description">
+                        下载New Car Simulator 2 9.0
+                    </p>
+                    
+                    <div class="download-notice">
+                        1.未及時同步更新請聯繫shaer
+                    </div>
+                    
+                    <div class="download-options">
+                        <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web" class="btn btn-download" target="_blank">
+                            <i class="fas fa-download"></i> 搶先版試玩
+                        </a>
+                        <a href="https://www.bilibili.com/video/BV1hq4y1s7VH/?share_source=copy_web" class="btn btn-download" target="_blank">
+                            <i class="fas fa-cloud-download-alt"></i> 正版下載
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <h2 class="section-title">联系我</h2>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="contact-icon">
+                            <img src="https://youke1.picui.cn/s1/2025/10/07/68e4c8c184634.jpg" alt="聰明人">
+                        </div>
+                        <div>
+                            <h2 class="card-title">Shaer</h2>
+                            <p>C.P.C 2025</p>
+                        </div>
+                    </div>
+                    
+                    <p class="card-description">
+                        合作聯繫
+                    </p>
+                    
+                    <div class="qq-group" id="contactNumber">2084459608</div>
+                    
+                    <button class="btn btn-copy" id="copyContactBtn">
+                        <i class="fas fa-copy"></i> 复制QQ号
+                    </button>
+                    
+                    <a href="https://ShaerAD.github.io/RX/" class="btn btn-contact" target="_blank">
+                        <i class="fab fa-qq"></i> 加入更多-RX
+                    </a>
+                </div>
             </div>
         </div>
         
